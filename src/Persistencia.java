@@ -8,6 +8,7 @@ import java.util.ArrayList;
 public class Persistencia {
 	
 	private XStream xstream;
+	private static final String NOME_ARQUIVO = "central.xml";
 	
 	public Persistencia() {
 		this.xstream = new XStream (new DomDriver());
@@ -19,15 +20,12 @@ public class Persistencia {
 		 });
 	}
 	
-	public void salvarCentral(CentralDeInformacoes informacao, String nomeArquivo) {
+	public void salvarCentral(CentralDeInformacoes informacao) {
 		
 		String xml = xstream.toXML(informacao);
 		
-		try {
-			File arquivo = new File (nomeArquivo);
-			PrintWriter writer = new PrintWriter(arquivo);
+		try (PrintWriter writer = new PrintWriter(NOME_ARQUIVO, "UTF-8")) {
 			writer.println(xml);
-			writer.close();	
 		} catch(IOException e) {
 			e.printStackTrace();
 		}
