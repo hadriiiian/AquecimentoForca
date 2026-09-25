@@ -1,14 +1,12 @@
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.io.File;
-
 
 public class Main {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		Persistencia p = new Persistencia();
 		
-		CentralDeInformacoes central = p.recuperarCentral("central");
+		CentralDeInformacoes central = p.recuperarCentral();
 		
 		while (true) {
 			System.out.println("=".repeat(40));
@@ -34,7 +32,7 @@ public class Main {
 				String cpf = input.nextLine();
 				
 				boolean deuCerto = central.addJogador(new Jogador(nome, email, sexo, cpf));
-				p.salvarCentral(central, "central");
+				p.salvarCentral(central);
 				
 				System.out.println(deuCerto ? "O jogador foi adicionado com sucesso!" : "O jogador já foi cadastrado!");
 				break;
@@ -95,6 +93,8 @@ public class Main {
 				System.out.println("OPÇÃO INVÁLIDA!");
 				break;
 			}
+			
+			input.close();
 		}
 	}
 }
