@@ -38,6 +38,7 @@ public class Main {
 				p.salvarCentral(central);
 				
 				System.out.println(deuCerto ? "O jogador foi adicionado com sucesso!" : "O jogador já foi cadastrado!");
+				
 			} else if (choice.equals("2")) {
 				System.out.println("=".repeat(40));
 				
@@ -49,6 +50,7 @@ public class Main {
 				for (Jogador j: jogadores) {
 					System.out.printf("%s%n", j.getNome());
 				}
+				
 			} else if (choice.equals("3")) {
 				System.out.println("=".repeat(40));
 
@@ -76,6 +78,7 @@ public class Main {
 						System.out.println("OPÇÃO INVÁLIDA!");
 					}
 				}
+				
 			} else if (choice.equals("4")) {
 				System.out.println("=".repeat(40));
 				
@@ -97,6 +100,7 @@ public class Main {
 				}
 				
 				System.out.println("Palavras salvas com sucesso!");
+				
 			} else if (choice.equals("5")) {
 				System.out.println("=".repeat(40));
 				
@@ -108,18 +112,35 @@ public class Main {
 				for (Palavra palavra: palavras) {
 					System.out.printf("%s%n", palavra.toString());
 				}
+				
 			} else if (choice.equals("6")) {
 				System.out.println("=".repeat(40));
 				
 				GeradorDeRelatorios.gerarRelatorio(central);
+				
 			} else if (choice.equals("7")) {
 				System.out.println("=".repeat(40));
+				
+				ArrayList<Jogador> jogadores = central.getTodosJogadores();
+				
+				System.out.print("Digite o assunto do email: ");
+				String assunto = input.nextLine().trim();
+				System.out.println("Digite a mensagem que deseja por no email: ");
+				String msg = input.nextLine().trim();
+				
+				for (Jogador j: jogadores) {
+					String email = j.getEmail();
+					Mensageiro.enviarMensagem(email, assunto, msg);
+				}
+				
+				System.out.println("Emails enviados com sucesso!");
 				
 			} else if (choice.equals("S")) {
 				System.out.println("=".repeat(40));
 
 				System.out.println("Até mais!");
 				break;
+				
 			} else {
 				System.out.println("=".repeat(40));
 
