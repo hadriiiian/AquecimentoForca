@@ -31,8 +31,8 @@ public class Persistencia {
 		}
 	}
 		
-	public CentralDeInformacoes recuperarCentral(String nomeArquivo) {
-		File arquivo = new File(nomeArquivo);
+	public CentralDeInformacoes recuperarCentral() {
+		File arquivo = new File(NOME_ARQUIVO);
 		
 		if(!arquivo.exists()){
 			return new CentralDeInformacoes();
