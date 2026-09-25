@@ -18,8 +18,7 @@ public class Main {
 					>>> """);
 			String choice = input.nextLine().trim().toUpperCase();
 			
-			switch(choice) {
-			case "1":
+			if (choice.equals("1")) {
 				System.out.println("=".repeat(40));
 				
 				System.out.print("Digite o seu nome: ");
@@ -35,9 +34,7 @@ public class Main {
 				p.salvarCentral(central);
 				
 				System.out.println(deuCerto ? "O jogador foi adicionado com sucesso!" : "O jogador já foi cadastrado!");
-				break;
-				
-			case "2":
+			} else if (choice.equals("2")) {
 				System.out.println("=".repeat(40));
 				
 				ArrayList<Jogador> jogadores = central.getTodosJogadores();
@@ -46,15 +43,11 @@ public class Main {
 						%s LISTA ATUAL DE JOGADORES %s %n""", "=".repeat(7), "=".repeat(7));
 				
 				for (Jogador j: jogadores) {
-					System.out.printf("%s", j.getNome());
+					System.out.printf("%s%n", j.getNome());
 				}
-				break;
-				
-			case "3":
+			} else if (choice.equals("3")) {
 				System.out.println("=".repeat(40));
-				
-				jogadores = central.getTodosJogadores();
-				
+
 				while(true) {
 					System.out.print("""
 							[ 1 ] - Pesquisar por CPF
@@ -79,22 +72,18 @@ public class Main {
 						System.out.println("OPÇÃO INVÁLIDA!");
 					}
 				}
-				break;
-				
-			case "S":
+			} else if (choice.equals("S")) {
 				System.out.println("=".repeat(40));
 
 				System.out.println("Até mais!");
-				return;
-				
-			default:
+				break;
+			} else {
 				System.out.println("=".repeat(40));
 
 				System.out.println("OPÇÃO INVÁLIDA!");
-				break;
 			}
-			
-			input.close();
 		}
+		
+		input.close();
 	}
 }
