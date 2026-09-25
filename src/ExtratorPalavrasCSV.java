@@ -1,10 +1,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.io.File; // representa caminho de arquivo e verifica sua existência
-
-import java.nio.charset.StandardCharsets; // padrão de codificação (UTF-8) para correção de acentos
-
-
+import java.io.File;
+import java.nio.charset.StandardCharsets;
 
 public class ExtratorPalavrasCSV {
 	public static ArrayList<Palavra> extrairPalavras(String nomeArquivoCSV){

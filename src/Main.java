@@ -14,6 +14,10 @@ public class Main {
 					[ 1 ] - Novo jogador
 					[ 2 ] - Listar todos os jogadores
 					[ 3 ] - Exibir as informações de um jogador 
+					[ 4 ] - Salvar palavras a partir de um arquivo CSV
+					[ 5 ] - Listar todas as palavras
+					[ 6 ] - Relatório em PDF
+					[ 7 ] - Enviar email à todos os jogadores
 					[ "S" ] - Sair
 					>>> """);
 			String choice = input.nextLine().trim().toUpperCase();
@@ -72,6 +76,45 @@ public class Main {
 						System.out.println("OPÇÃO INVÁLIDA!");
 					}
 				}
+			} else if (choice.equals("4")) {
+				System.out.println("=".repeat(40));
+				
+				System.out.print("Digite o nome do arquivo CSV que você deseja ler: ");
+				String csvNome = input.nextLine().trim();
+				
+				ArrayList<Palavra> palavras = ExtratorPalavrasCSV.extrairPalavras(csvNome);
+				
+				while (palavras == null) {
+					System.out.print("""
+							O nome do arquivo que você informou não foi encontrado!
+							Digite NOVAMENTE o nome do arquivo CSV que você deseja ler: """);
+					csvNome = input.nextLine().trim();
+					palavras = ExtratorPalavrasCSV.extrairPalavras(csvNome);
+				}
+				
+				for (Palavra palavra: palavras) {
+					central.addPalavra(palavra);
+				}
+				
+				System.out.println("Palavras salvas com sucesso!");
+			} else if (choice.equals("5")) {
+				System.out.println("=".repeat(40));
+				
+				ArrayList<Palavra> palavras = central.getPalavras();
+				
+				System.out.printf("""
+						%s LISTA ATUAL DE PALAVRAS %s %n""", "=".repeat(7), "=".repeat(7));
+				
+				for (Palavra palavra: palavras) {
+					System.out.printf("%s%n", palavra.toString());
+				}
+			} else if (choice.equals("6")) {
+				System.out.println("=".repeat(40));
+				
+				GeradorDeRelatorios.gerarRelatorio(central);
+			} else if (choice.equals("7")) {
+				System.out.println("=".repeat(40));
+				
 			} else if (choice.equals("S")) {
 				System.out.println("=".repeat(40));
 
