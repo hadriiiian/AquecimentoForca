@@ -37,7 +37,7 @@ public class Jogador {
 	}
 	
 	public String toString() {
-		return nome;
+		return String.format("%s(%s): %s, %s", nome, sexo, email, cpf);
 	}
 	
 	public boolean equals(Object obj) {
