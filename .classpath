@@ -9,5 +9,6 @@
 	<classpathentry kind="lib" path="src/lib/xstream-1.4.21.jar"/>
 	<classpathentry kind="lib" path="src/lib/javax.mail.jar"/>
 	<classpathentry kind="lib" path="src/lib/itextpdf-5.5.13.6.jar"/>
+	<classpathentry kind="lib" path="src/lib/activation-1.1.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

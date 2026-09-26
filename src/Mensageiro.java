@@ -11,8 +11,8 @@ import javax.mail.PasswordAuthentication;
 
 public class Mensageiro {
 	
-	private static final String EMAIL_REMETENTE = "aquecimentoforca@gmail.com";
-	private static final String SENHA_REMETENTE = "zsefilskzutgeupe";
+	private static final String EMAIL_REMETENTE = "forcaaquecimento@gmail.com";
+	private static final String SENHA_REMETENTE = "qvvepscjwqzqiyqq";
 	
 	public static void enviarMensagem(String emailDestinatario, String assunto, String mensagem) {
 		
