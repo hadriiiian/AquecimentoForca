@@ -108,7 +108,3 @@ Se alguma linha estiver fora desse formato, `ExtratorPalavrasCSV.extrairPalavras
 - **Credenciais de e-mail expostas**: a classe `Mensageiro` contém o e-mail e a senha do remetente diretamente no código-fonte. Antes de compartilhar ou versionar o projeto publicamente (ex.: GitHub), recomenda-se mover essas credenciais para variáveis de ambiente ou um arquivo de configuração fora do controle de versão, e trocar a senha exposta.
 - **Jogo da Forca**: as classes `JogoDaForca`, `Palavra` e `Dificuldade` já implementam a lógica base do jogo (sorteio, tentativa de letras, gabarito), mas essa parte ainda não está integrada ao menu do `Main` — é o próximo passo natural do projeto completo.
 - **`CentralDeInformacoes`**: os métodos de leitura (`readCPF`, `readEmail`, `readPalavra`) e adição (`addJogador`, `addPalavra`) evitam duplicidade de CPF/e-mail e de palavras repetidas, conforme exigido no enunciado.
-
-## Autoria
-
-Lista de aquecimento da disciplina de Programação Orientada a Objetos — pode ser feita individualmente, em dupla ou em trio, conforme orientação do professor.
