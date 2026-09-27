@@ -1,6 +1,6 @@
 # Jogo da Forca — Lista de Aquecimento (POO)
 
-Projeto desenvolvido para a disciplina **Programação Orientada a Objetos** (ADS – IFPB – Campus Santa Rita, Prof. Cleyton Caetano de Souza), referente à *Lista Semanal de Aquecimento para o Projeto*.
+Projeto desenvolvido para a disciplina **Programação Orientada a Objetos** (ADS – Prof. Cleyton Caetano de Souza), referente à *Lista Semanal de Aquecimento para o Projeto*, da qual o grupo formado é composto por mim (@hadriiiian), Eduardo Hipólito (@eduardohtech) e João Augusto (@joaoaugusto14).
 
 O sistema permite cadastrar jogadores, importar palavras de um arquivo CSV, gerar relatórios em PDF, enviar e-mails aos jogadores cadastrados e jogar uma partida de Jogo da Forca, com persistência dos dados em XML.
 
