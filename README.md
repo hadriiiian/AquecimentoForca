@@ -5,7 +5,7 @@
   <img src="https://img.shields.io/badge/POO-6A0DAD?style=flat&logo=hackthebox&logoColor=white" alt="POO"/>
   <img src="https://img.shields.io/badge/XStream-XML-2C7BB6?style=flat" alt="XStream"/>
   <img src="https://img.shields.io/badge/iText-PDF-D32F2F?style=flat&logo=adobeacrobatreader&logoColor=white" alt="iText"/>
-  <img src="https://img.shields.io/badge/JavaMail-E-mail-EA4335?style=flat&logo=gmail&logoColor=white" alt="JavaMail"/>
+  <img src="https://img.shields.io/badge/JavaMail-E--mail-EA4335?style=flat&logo=gmail&logoColor=white" alt="JavaMail"/>
   <img src="https://img.shields.io/badge/Eclipse-2C2255?style=flat&logo=eclipseide&logoColor=white" alt="Eclipse"/>
 </p>
 
