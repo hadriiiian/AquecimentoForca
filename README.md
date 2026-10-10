@@ -1,10 +1,32 @@
-# Jogo da Forca — Lista de Aquecimento (POO)
+<h1 align="center">☕ Jogo da Forca — Lista de Aquecimento (POO)</h1>
 
-Projeto desenvolvido para a disciplina **Programação Orientada a Objetos** (ADS – Prof. Cleyton Caetano de Souza), referente à *Lista Semanal de Aquecimento para o Projeto*, da qual o grupo formado é composto por mim (@hadriiiian), Eduardo Hipólito (@eduardohtech) e João Augusto (@joaoaugusto14).
+<p align="center">
+  <img src="https://img.shields.io/badge/Java-ED8B00?style=flat&logo=openjdk&logoColor=white" alt="Java"/>
+  <img src="https://img.shields.io/badge/POO-6A0DAD?style=flat&logo=hackthebox&logoColor=white" alt="POO"/>
+  <img src="https://img.shields.io/badge/XStream-XML-2C7BB6?style=flat" alt="XStream"/>
+  <img src="https://img.shields.io/badge/iText-PDF-D32F2F?style=flat&logo=adobeacrobatreader&logoColor=white" alt="iText"/>
+  <img src="https://img.shields.io/badge/JavaMail-E-mail-EA4335?style=flat&logo=gmail&logoColor=white" alt="JavaMail"/>
+  <img src="https://img.shields.io/badge/Eclipse-2C2255?style=flat&logo=eclipseide&logoColor=white" alt="Eclipse"/>
+</p>
+
+<p align="center">
+  Projeto desenvolvido para a disciplina <b>Programação Orientada a Objetos</b> (ADS – Prof. Cleyton Caetano de Souza),<br>
+  referente à <i>Lista Semanal de Aquecimento para o Projeto</i>.
+</p>
+
+---
 
 O sistema permite cadastrar jogadores, importar palavras de um arquivo CSV, gerar relatórios em PDF, enviar e-mails aos jogadores cadastrados e jogar uma partida de Jogo da Forca, com persistência dos dados em XML.
 
-## Funcionalidades
+## Equipe
+
+| Integrante | GitHub |
+|---|---|
+| Hádrian Renê | [@hadriiiian](https://github.com/hadriiiian) |
+| Eduardo Hipólito | [@eduardohtech](https://github.com/eduardohtech) |
+| João Augusto | [@joaoaugusto14](https://github.com/joaoaugusto14) |
+
+## 🧩 Funcionalidades
 
 - **Cadastro de jogadores**: nome, sexo, CPF e e-mail (CPF e e-mail únicos no sistema).
 - **Listagem de jogadores** cadastrados.
@@ -16,7 +38,7 @@ O sistema permite cadastrar jogadores, importar palavras de um arquivo CSV, gera
 - **Persistência automática** da Central de Informações em `central.xml` (via XStream), recuperada a cada execução.
 - Estrutura já preparada para o **Jogo da Forca** (sorteio de palavra, tentativa de letras, controle de gabarito).
 
-## Estrutura de classes
+## 📂 Estrutura de classes
 
 | Classe | Responsabilidade |
 |---|---|
@@ -36,9 +58,11 @@ O sistema permite cadastrar jogadores, importar palavras de um arquivo CSV, gera
 
 O projeto utiliza três bibliotecas que precisam estar no *classpath*:
 
-- **XStream** — serialização de objetos em XML (usada por `Persistencia`).
-- **iText (com.itextpdf)** — geração de PDF (usada por `GeradorDeRelatorios`).
-- **JavaMail (javax.mail)** — envio de e-mails via SMTP (usado por `Mensageiro`).
+| Biblioteca | Uso | Classe |
+|---|---|---|
+| **XStream** | Serialização de objetos em XML | `Persistencia` |
+| **iText** (`com.itextpdf`) | Geração de PDF | `GeradorDeRelatorios` |
+| **JavaMail** (`javax.mail`) | Envio de e-mails via SMTP | `Mensageiro` |
 
 Se estiver usando Maven, adicione ao `pom.xml`:
 
@@ -91,7 +115,13 @@ Cada linha deve seguir o formato:
 palavra, nível_de_dificuldade, dica
 ```
 
-Onde `nível_de_dificuldade` é um número inteiro correspondente à posição no enum `Dificuldade` (`0 = FACIL`, `1 = MEDIO`, `2 = DIFICIL`).
+Onde `nível_de_dificuldade` é um número inteiro correspondente à posição no enum `Dificuldade`:
+
+| Valor | Dificuldade |
+|:-:|---|
+| `0` | `FACIL` |
+| `1` | `MEDIO` |
+| `2` | `DIFICIL` |
 
 Exemplo:
 
@@ -105,6 +135,8 @@ Se alguma linha estiver fora desse formato, `ExtratorPalavrasCSV.extrairPalavras
 
 ## Observações e pontos de atenção
 
-- **Credenciais de e-mail expostas**: a classe `Mensageiro` contém o e-mail e a senha do remetente diretamente no código-fonte. Antes de compartilhar ou versionar o projeto publicamente (ex.: GitHub), recomenda-se mover essas credenciais para variáveis de ambiente ou um arquivo de configuração fora do controle de versão, e trocar a senha exposta.
+> [!WARNING]
+> **Credenciais de e-mail expostas**: a classe `Mensageiro` contém o e-mail e a senha do remetente diretamente no código-fonte. Antes de compartilhar ou versionar o projeto publicamente (ex.: GitHub), recomenda-se mover essas credenciais para variáveis de ambiente ou um arquivo de configuração fora do controle de versão, e trocar a senha exposta.
+
 - **Jogo da Forca**: as classes `JogoDaForca`, `Palavra` e `Dificuldade` já implementam a lógica base do jogo (sorteio, tentativa de letras, gabarito), mas essa parte ainda não está integrada ao menu do `Main` — é o próximo passo natural do projeto completo.
 - **`CentralDeInformacoes`**: os métodos de leitura (`readCPF`, `readEmail`, `readPalavra`) e adição (`addJogador`, `addPalavra`) evitam duplicidade de CPF/e-mail e de palavras repetidas, conforme exigido no enunciado.
